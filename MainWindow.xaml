@@ -1,0 +1,335 @@
+﻿<Window x:Class="StageEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StageEditor"
+        mc:Ignorable="d"
+        Title="Gunbound Stage Editor For S2 Made by Garsia" Height="733" Width="743" Loaded="Window_Loaded"  WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <GroupBox Header="Stage Info" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="5,5,5,0"  >
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label  HorizontalAlignment="Left" Content="Title:" Margin="5,0,0,0" VerticalAlignment="Top"  />
+                    <TextBox Name="TXTTITLE" HorizontalAlignment="Left" Height="23" Margin="40,4,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                    <Label HorizontalAlignment="Left" Content="FileName:" Margin="165,0,0,0" VerticalAlignment="Top"  />
+                    <TextBox Name="TXTFILENAME"  HorizontalAlignment="Left" Height="23" Margin="227,4,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="89"/>
+                    <Label Name="LBLINDEX" HorizontalAlignment="Left" Content="Index: 0" Margin="274,29,0,0" VerticalAlignment="Top"  />
+                    <Border BorderThickness="1" BorderBrush="Black"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,32,0,0" Grid.Row="0" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <RadioButton Name="CUNK1_1" Content="Unk1" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Top" Grid.Row="0"/>
+                            <RadioButton Name="CUNK1_2" Content="Unk2" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Top" Grid.Row="1"/>
+                            <RadioButton Name="CUNK1_3" Content="Unk3" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Top" Grid.Row="2"/>
+
+                        </Grid>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="Black"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="57,32,0,0" Height="59" Grid.Row="0" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <RadioButton Name="CUNK2_1" Content="Unk1" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Top" Grid.Row="0"/>
+                            <RadioButton Name="CUNK2_2" Content="Unk2" HorizontalAlignment="Left" Margin="2" VerticalAlignment="Top" Grid.Row="1"/>
+
+
+                        </Grid>
+                    </Border>
+                    <Button Name="BTNNEXT" Content="Next -&gt;" HorizontalAlignment="Left" Margin="194,32,0,0" VerticalAlignment="Top" Width="75" Click="BTNNEXT_Click" />
+                    <Button Name="BTNBACK" Content="&lt;- Back" HorizontalAlignment="Left" Margin="114,32,0,0" VerticalAlignment="Top" Width="75" Click="BTNBACK_Click"/>
+
+                    <Grid Grid.Row="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Force" Height="23" HorizontalContentAlignment="Center" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
+                        <Label Grid.Row="0" Grid.Column="1" Content="Hurricane" Height="23" HorizontalContentAlignment="Center" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
+                        <Label Grid.Row="0" Grid.Column="2" Content="Electricity" Height="23" HorizontalContentAlignment="Center" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
+                        <Label Grid.Row="0" Grid.Column="3" Content="Wind" Height="23" HorizontalContentAlignment="Center" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
+                        <Label Grid.Row="0" Grid.Column="4" Content="Protection" Height="23" HorizontalContentAlignment="Center" HorizontalAlignment="Center"  VerticalAlignment="Top"/>
+                        <Label Grid.Row="0" Grid.Column="5" Content="Ignorance" Height="23" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <Label Grid.Row="0" Grid.Column="6" Content="Thor" Height="23" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <Label Grid.Row="0" Grid.Column="7" Content="BlackForce" Height="23" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <Label Grid.Row="0" Grid.Column="8" Content="Mirror" Height="23" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <Label Grid.Row="0" Grid.Column="9" Content="JokerForce" Height="23" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                        <TextBox Grid.Row="1" Grid.Column="0" Name="TForce"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="23" TextWrapping="Wrap" Text="00" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="1" Grid.Column="1" Name="THurricane"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="23" TextWrapping="Wrap" Text="00" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="1" Grid.Column="2" Name="TElectricity"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="23" TextWrapping="Wrap" Text="00" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="1" Grid.Column="3" Name="TWind"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="23" TextWrapping="Wrap" Text="00" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="1" Grid.Column="4" Name="TProtection"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="23" TextWrapping="Wrap" Text="00" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="1" Grid.Column="5" Name="TIgnorance"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="23" TextWrapping="Wrap" Text="00" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="1" Grid.Column="6" Name="TThor"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="23" TextWrapping="Wrap" Text="00" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="1" Grid.Column="7" Name="TBlackForce"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="23" TextWrapping="Wrap" Text="00" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="1" Grid.Column="8" Name="TMirror"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="23" TextWrapping="Wrap" Text="00" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="1" Grid.Column="9" Name="TJokerForce"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="23" TextWrapping="Wrap" Text="00" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                    </Grid>
+                    <Label Name="TXTDEBUGC" Content="Label" HorizontalAlignment="Left" Margin="239,60,0,0" VerticalAlignment="Top" Width="144"/>
+                    <Button Name="BTNSAVE" Content="Save" HorizontalAlignment="Left" Margin="628,32,0,0" VerticalAlignment="Top" Width="75" Click="BTNSAVE_Click"/>
+                    <Button x:Name="BTNADDNEW" Content="Add" HorizontalAlignment="Left" Margin="330,32,0,0" VerticalAlignment="Top" Width="75" Click="BTNADDNEW_Click"/>
+                    <TextBox Name="TXTHEX" HorizontalAlignment="Left" Height="23" Margin="114,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Hurricane Location" HorizontalAlignment="Stretch" Height="Auto" Margin="5,170,5,0" VerticalAlignment="Top" >
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top"/>
+                    <Label Content="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="2" VerticalAlignment="Top"/>
+                    <Label Content="3" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="3" VerticalAlignment="Top"/>
+                    <Label Content="4" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="4" VerticalAlignment="Top"/>
+                    <Label Content="5" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="5" VerticalAlignment="Top"/>
+                    <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="6" VerticalAlignment="Top"/>
+                    <Label Content="7" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="7" VerticalAlignment="Top"/>
+                    <Label Content="8" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="8" VerticalAlignment="Top"/>
+                    <Label Content="Min" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top"/>
+                    <Label Content="Max" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Top"/>
+                    <TextBox Name="HMIN1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" Grid.Row="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMAX1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" Grid.Row="2" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMIN2" Grid.Column="2" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMAX2" Grid.Column="2" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMIN3" Grid.Column="3" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMAX3" Grid.Column="3" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMIN4" Grid.Column="4" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMAX4" Grid.Column="4" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMIN5" Grid.Column="5" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMAX5" Grid.Column="5" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMIN6" Grid.Column="6" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMAX6" Grid.Column="6" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMIN7" Grid.Column="7" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMAX7" Grid.Column="7" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMIN8" Grid.Column="8" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="HMAX8" Grid.Column="8" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Force Location" HorizontalAlignment="Stretch" Height="Auto" Margin="5,276,5,0" VerticalAlignment="Top" >
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top"/>
+                    <Label Content="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="2" VerticalAlignment="Top"/>
+                    <Label Content="3" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="3" VerticalAlignment="Top"/>
+                    <Label Content="4" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="4" VerticalAlignment="Top"/>
+                    <Label Content="5" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="5" VerticalAlignment="Top"/>
+                    <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="6" VerticalAlignment="Top"/>
+                    <Label Content="7" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="7" VerticalAlignment="Top"/>
+                    <Label Content="8" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="8" VerticalAlignment="Top"/>
+                    <Label Content="Min" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top"/>
+                    <Label Content="Max" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Top"/>
+                    <TextBox Name="FMIN1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" Grid.Row="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMAX1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" Grid.Row="2" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMIN2" Grid.Column="2" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMAX2" Grid.Column="2" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMIN3" Grid.Column="3" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMAX3" Grid.Column="3" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMIN4" Grid.Column="4" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMAX4" Grid.Column="4" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMIN5" Grid.Column="5" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMAX5" Grid.Column="5" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMIN6" Grid.Column="6" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMAX6" Grid.Column="6" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMIN7" Grid.Column="7" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMAX7" Grid.Column="7" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMIN8" Grid.Column="8" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="FMAX8" Grid.Column="8" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Electricity Location" HorizontalAlignment="Stretch" Height="Auto" Margin="5,382,5,0" VerticalAlignment="Top" >
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top"/>
+                    <Label Content="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="2" VerticalAlignment="Top"/>
+                    <Label Content="3" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="3" VerticalAlignment="Top"/>
+                    <Label Content="4" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="4" VerticalAlignment="Top"/>
+                    <Label Content="5" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="5" VerticalAlignment="Top"/>
+                    <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="6" VerticalAlignment="Top"/>
+                    <Label Content="7" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="7" VerticalAlignment="Top"/>
+                    <Label Content="8" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="8" VerticalAlignment="Top"/>
+                    <Label Content="Min" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top"/>
+                    <Label Content="Max" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Top"/>
+                    <TextBox Name="EMIN1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" Grid.Row="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMAX1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" Grid.Row="2" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMIN2" Grid.Column="2" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMAX2" Grid.Column="2" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMIN3" Grid.Column="3" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMAX3" Grid.Column="3" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMIN4" Grid.Column="4" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMAX4" Grid.Column="4" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMIN5" Grid.Column="5" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMAX5" Grid.Column="5" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMIN6" Grid.Column="6" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMAX6" Grid.Column="6" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMIN7" Grid.Column="7" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMAX7" Grid.Column="7" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMIN8" Grid.Column="8" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="EMAX8" Grid.Column="8" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Black Force Location" HorizontalAlignment="Stretch" Height="Auto" Margin="5,488,5,0" VerticalAlignment="Top" >
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top"/>
+                    <Label Content="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="2" VerticalAlignment="Top"/>
+                    <Label Content="3" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="3" VerticalAlignment="Top"/>
+                    <Label Content="4" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="4" VerticalAlignment="Top"/>
+                    <Label Content="5" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="5" VerticalAlignment="Top"/>
+                    <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="6" VerticalAlignment="Top"/>
+                    <Label Content="7" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="7" VerticalAlignment="Top"/>
+                    <Label Content="8" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="8" VerticalAlignment="Top"/>
+                    <Label Content="Min" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top"/>
+                    <Label Content="Max" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Top"/>
+                    <TextBox Name="XMIN1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" Grid.Row="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMAX1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" Grid.Row="2" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMIN2" Grid.Column="2" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMAX2" Grid.Column="2" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMIN3" Grid.Column="3" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMAX3" Grid.Column="3" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMIN4" Grid.Column="4" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMAX4" Grid.Column="4" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMIN5" Grid.Column="5" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMAX5" Grid.Column="5" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMIN6" Grid.Column="6" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMAX6" Grid.Column="6" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMIN7" Grid.Column="7" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMAX7" Grid.Column="7" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMIN8" Grid.Column="8" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="XMAX8" Grid.Column="8" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Mirror Location" HorizontalAlignment="Stretch" Height="Auto" Margin="5,594,5,0" VerticalAlignment="Top" >
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="1" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top"/>
+                    <Label Content="2" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="2" VerticalAlignment="Top"/>
+                    <Label Content="3" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="3" VerticalAlignment="Top"/>
+                    <Label Content="4" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="4" VerticalAlignment="Top"/>
+                    <Label Content="5" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="5" VerticalAlignment="Top"/>
+                    <Label Content="6" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="6" VerticalAlignment="Top"/>
+                    <Label Content="7" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="7" VerticalAlignment="Top"/>
+                    <Label Content="8" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="0" Grid.Column="8" VerticalAlignment="Top"/>
+                    <Label Content="Min" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top"/>
+                    <Label Content="Max" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Top"/>
+                    <TextBox Name="YMIN1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" Grid.Row="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMAX1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" Grid.Row="2" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMIN2" Grid.Column="2" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMAX2" Grid.Column="2" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMIN3" Grid.Column="3" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMAX3" Grid.Column="3" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMIN4" Grid.Column="4" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMAX4" Grid.Column="4" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMIN5" Grid.Column="5" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMAX5" Grid.Column="5" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMIN6" Grid.Column="6" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMAX6" Grid.Column="6" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMIN7" Grid.Column="7" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMAX7" Grid.Column="7" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMIN8" Grid.Column="8" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                    <TextBox Name="YMAX8" Grid.Column="8" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="1" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="33"/>
+                </Grid>
+            </GroupBox>
+
+
+        </Grid>
+        <Label Name="LBError" Visibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"> Error Stage.dat Not Found</Label>
+    </Grid>
+</Window>
